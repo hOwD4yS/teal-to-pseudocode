@@ -1,9 +1,18 @@
-# teal-to-pseudocode (This project has been stopped)
-# Some Instructions are not implemented.
+# teal-to-pseudocode $\textcolor{red}{\textsf{ (This project has been stopped)}}$
+- Some Instructions are not implemented.
+- You can add easily an implementation of opcode which you want. **Look `config.py`!**
+
+# Beautifuler mode
+
+The Beautifuler mode follows `jump` condition, so the result code will be pretty well. However, simultaneously, there are some possiblilty to confuse stack status.  
+
+If you turn off this, the program will not optimize the program so the result code will act as the original. But, It will have so long code as much as the original `teal` code.
+
+
 
 # Test 
 ## Teal File: https://github.com/Folks-Finance/folks-finance-contracts/blob/main/contracts/v1/algo_governance/algo_governance_approval_program.teal
-## The result after running program
+## The result after running program (Beautifuler mode ON)
 ```go
 #pragma version 5
 
@@ -283,3 +292,6 @@ sub4: // it is possible for stack to be confused
 RETSUB(DATA: ((GLOBAL[ZeroAddress] == TXN[field: RekeyTo, gi: 2, ai: 0]) && ((GLOBAL[ZeroAddress] == TXN[field: CloseRemainderTo, gi: 2, ai: 0]) && ((GLOBAL[ZeroAddress] == TXN[field: AssetCloseTo, gi: 2, ai: 0]) && ((GLOBAL[CurrentApplicationAddress] == TXN[field: AssetReceiver, gi: 2, ai: 0]) && ((TXN[field: Sender, gi: 0, ai: 0] == TXN[field: Sender, gi: 2, ai: 0]) && ((CTX.GetGlobal(appID: CTX.appID, key: string((byte)"g_algo_id")) == TXN[field: XferAsset, gi: 2, ai: 0]) && ((int)axfer == TXN[field: TypeEnum, gi: 2, ai: 0]))))))))
 ```
 
+
+# Contact
+email: howzinuns@gmail.com or jinh@korea.ac.kr
